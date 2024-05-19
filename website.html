@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            cursor: pointer;
+            width: 200px;
+            transition: transform 0.2s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .gallery-item p {
+            margin: 0;
+            padding: 0.5rem;
+            background-color: #333;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Website Collection</h1>
+    </header>
+    <main>
+        <div class="gallery">
+            <div class="gallery-item" data-url="https://mangareader.to/home">
+                <img src="C:\Users\dell\OneDrive\Pictures\Screenshots\manga.png" alt="Website 1">
+                <p>MANGA READER</p>
+            </div>
+            <div class="gallery-item" data-url="file:///C:/Users/dell/Downloads/First.html">
+                <img src="C:\Users\dell\OneDrive\Pictures\Screenshots\RecordKeeper.png" alt="Website 2">
+                <p>MONEY TRACKER</p>
+            </div>
+            <div class="gallery-item" data-url="file:///C:/Users/dell/Downloads/project.html">
+                <img src="C:\Users\dell\OneDrive\Pictures\Screenshots\Creative.png" alt="Website 3">
+                <p>CREATIVE DESIGNER</p>
+            </div>
+            <!-- Add more gallery items as needed -->
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const url = item.getAttribute('data-url');
+                    window.open(url, '_blank');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
